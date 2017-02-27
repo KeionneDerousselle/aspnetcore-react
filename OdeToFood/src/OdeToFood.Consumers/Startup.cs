@@ -27,6 +27,7 @@ namespace OdeToFood.Consumers
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddSingleton<IGreeter, Greeter>();
@@ -49,6 +50,8 @@ namespace OdeToFood.Consumers
                     ExceptionHandler = context => context.Response.WriteAsync("Oops!")
                 });
             }
+
+            app.UseCors(builder => builder.AllowAnyOrigin());
 
             app.UseMvc(ConfigureRoutes);
         }
