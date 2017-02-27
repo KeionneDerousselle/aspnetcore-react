@@ -7,18 +7,21 @@ export default class App extends Component{
         super(props);
         this.state = {
             currentState: "",
-            restaurants: []
+            restaurants: [],
+            responseErrorMessage: ""
         }
     }
 
-    componentDidMount(){
-        fetch('http://localhost:55257/home/getrestaurants')
-           .then(function(response) {
-               return response.text()
-           }).then((b) => {
-               var data = JSON.parse(b);
-               this.setState(data);
-           })
+    componentDidMount() {
+        fetch('http://localhost:55257/home/getrestaurantsfg')
+            .then((response) => {
+                if (response.status === 200) {
+                    var data = JSON.parse(response.text());
+                    this.setState(data);
+                } else {
+                    this.setState({ responseErrorMessage: response.statusText });
+                }
+            });
     }
 
     componentWillUnmount(){
@@ -29,6 +32,8 @@ export default class App extends Component{
         let restaurants = this.state.restaurants.map((restaurant) =>
             <li key={restaurant.id}>{restaurant.name}</li>
         );
+
+        let errorMessage = this.state.responseErrorMessage;
 
         return ( 
             <div>
