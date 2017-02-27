@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{582F4ED0-A0C0-498A-813B-D909A8B58816}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4C29B25E-04D0-4B3D-AE71-7ADFFADD43DC}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "OdeToFood", "src\OdeToFood\OdeToFood.xproj", "{63E5FA2B-5B1B-447A-AE50-2076B2F5C0EA}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "OdeToFood.Consumers", "src\OdeToFood.Consumers\OdeToFood.Consumers.xproj", "{669DF554-7C46-47D0-8580-A1D32298E39C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63E5FA2B-5B1B-447A-AE50-2076B2F5C0EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63E5FA2B-5B1B-447A-AE50-2076B2F5C0EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63E5FA2B-5B1B-447A-AE50-2076B2F5C0EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63E5FA2B-5B1B-447A-AE50-2076B2F5C0EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{669DF554-7C46-47D0-8580-A1D32298E39C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{669DF554-7C46-47D0-8580-A1D32298E39C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{669DF554-7C46-47D0-8580-A1D32298E39C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{669DF554-7C46-47D0-8580-A1D32298E39C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63E5FA2B-5B1B-447A-AE50-2076B2F5C0EA} = {582F4ED0-A0C0-498A-813B-D909A8B58816}
+		{669DF554-7C46-47D0-8580-A1D32298E39C} = {582F4ED0-A0C0-498A-813B-D909A8B58816}
+	EndGlobalSection
+EndGlobal

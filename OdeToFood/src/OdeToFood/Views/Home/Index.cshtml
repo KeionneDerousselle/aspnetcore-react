@@ -1,0 +1,29 @@
+﻿@*@model OdeToFood.Models.Restaurant*@
+@*@model IEnumerable<OdeToFood.Entities.Restaurant>*@
+@model OdeToFood.ViewModels.HomePageViewModel
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ode To Food</title>
+</head>
+<body>
+    @*<h1>@Model.Id</h1>*@
+    @*<h1>@Model.Name</h1>*@
+
+<h1>Welcome!</h1>
+<h2>@Model.CurrentMessage</h2>
+    <table>
+        @foreach (var restaurant in Model.Restaurants)
+        {
+            <tr>
+                <td>
+                   @* <a href="/home/details/@restaurant.Id">Details</a>*@
+                    @Html.ActionLink("View", "Details", new { id = restaurant.Id })
+                </td>
+                <td>@restaurant.Name</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
