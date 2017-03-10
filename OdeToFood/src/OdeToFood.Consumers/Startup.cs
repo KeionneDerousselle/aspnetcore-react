@@ -45,6 +45,8 @@ namespace OdeToFood.Consumers
             }
             else
             {
+                //you could use this to write to a log or report to SumoLogic and NewRelic
+                //write whatever message was sent in your custom exceptions to logs 
                 app.UseExceptionHandler(new ExceptionHandlerOptions
                 {
                     ExceptionHandler = context => context.Response.WriteAsync("Oops!")

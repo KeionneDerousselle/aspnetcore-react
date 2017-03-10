@@ -1,5 +1,6 @@
 ﻿import React, {Component} from 'react';
 import 'whatwg-fetch';
+import Nav from './Nav.jsx';
 
 function ErrorMessage(props) {
     return <h2>{props.errorMessage}</h2>;
@@ -7,13 +8,13 @@ function ErrorMessage(props) {
 
 function RestaurantsContent(props) {
     let restaurants = props.restaurants.map((restaurant) =>
-        <li key={restaurant.id}>{restaurant.name}</li>
+        <li key={restaurant.id} className="collection-item">{restaurant.name}</li>
         );
 
     return(
         <div>
             <h2>{props.currentMessage}</h2>
-            <ul>{restaurants}</ul>
+            <ul className="collection">{restaurants}</ul>
         </div>
     );
 }
@@ -38,7 +39,7 @@ export default class App extends Component{
             responseErrorMessage: ""
         }
     }
-
+    
     componentDidMount() {
         fetch('http://localhost:55257/home/getrestaurants')
             .then((response) => {
@@ -59,10 +60,13 @@ export default class App extends Component{
     render(){
        return ( 
             <div>
-               <AppContent 
+               <Nav />
+               <div className="container-20">
+                <AppContent
                     errorMessage={this.state.responseErrorMessage}
                     currentMessage ={this.state.currentMessage}
                     restaurants = {this.state.restaurants} />
+               </div>
             </div>
             );
     }
